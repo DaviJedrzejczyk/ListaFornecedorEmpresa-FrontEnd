@@ -1,0 +1,50 @@
+:host {
+  form {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &,
+    label,
+    input,
+    select {
+      flex: 1;
+      width: 100%;
+    }
+
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--primary);
+      font-size: 20px;
+
+      input,
+      select {
+        height: 50px;
+        border: none;
+        font-size: 18px;
+        padding-left: 5px;
+      }
+    }
+    .tipoPessoa {
+      height: 50px;
+      justify-content: flex-start;
+      align-items: center;
+      display: flex;
+      border: none;
+      font-size: 20px;
+      option {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

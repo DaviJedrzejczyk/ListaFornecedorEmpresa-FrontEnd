@@ -1,0 +1,41 @@
+<div class="container">
+  <form [formGroup]="formEditCompany" (ngSubmit)="submitForm()">
+    <label for="id">
+      <input type="text" formControlName="id" required hidden />
+    </label>
+    <label for="nomeFantasia">
+      Nome Fantasia:
+      <input type="text" formControlName="nomeFantasia" required />
+    </label>
+    <label for="cnpj">
+      CNPJ:
+      <input
+        type="text"
+        formControlName="cnpj"
+        required
+        [mask]="'00.000.000/0000-00'"
+      />
+    </label>
+    <label for="uf">
+      UF:
+      <select formControlName="uf">
+        @for (item2 of brasilian; track item2; let i = $index) {
+        <option [value]="i" [selected]="i === formEditCompany.value.uf">
+          {{ item2 }}
+        </option>
+        }
+      </select>
+    </label>
+
+    <div class="buttons">
+      <button class="btn btn-primary" title="Cadastrar empresa">Salvar</button>
+      <button class="btn btn-danger" (click)="delete()">Deletar</button>
+      <a class="btn btn__secondary" (click)="navigateToCompanies()">Voltar</a>
+    </div>
+  </form>
+
+  @if(msgError){
+  <span class="msg-error">{{ msgError }}</span> } @else if(msgSuccess) {
+  <span class="msg-success">{{ msgSuccess }}</span
+  >}
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <form [formGroup]="formInsertCompany" (ngSubmit)="submitForm()">
+    <label for="nomeFantasia">
+      Nome Fantasia:
+      <input type="text" formControlName="nomeFantasia" required />
+    </label>
+    <label for="cnpj">
+      CNPJ:
+      <input
+        type="text"
+        formControlName="cnpj"
+        required
+        [mask]="'00.000.000/0000-00'"
+      />
+    </label>
+    <label for="uf">
+      UF:
+      <select formControlName="uf">
+        @for (item of brasilian; track item; let i = $index) {
+        <option [value]="i">{{ item }}</option>
+        }
+      </select>
+    </label>
+
+    <button class="btn btn-primary" title="Cadastrar empresa">Cadastrar</button>
+  </form>
+
+  @if(msgError){
+  <span class="msg-error">{{ msgError }}</span> } @else if(msgSuccess) {
+  <span class="msg-success">{{ msgSuccess }}</span
+  >}
+</div>

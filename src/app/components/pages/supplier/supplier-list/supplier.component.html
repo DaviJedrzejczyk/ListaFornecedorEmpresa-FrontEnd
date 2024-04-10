@@ -1,0 +1,43 @@
+<div class="title">
+  <h1>Fornecedores Cadastrados</h1>
+  <button
+    class="btn btn-primary"
+    title="Inserir novo fornecedor"
+    [routerLink]="['insertSupplier']"
+  >
+    + Novo
+  </button>
+  <section class="listagem">
+    @for (item of getAllSuppliers; track item) {
+    <a [routerLink]="['UpdateSupplier', item.id]" class="suppliers">
+      <section class="suppliers__status">
+        <p>Nome: {{ item.name }}</p>
+        <ul>
+          <li>
+            @if(item.cnpj){
+            <p>CNPJ: {{ item.cnpj }}</p>
+            } @else {
+            <p>CPF: {{ item.cpf }}</p>
+            <p>RG: {{ item.rg }}</p>
+            }
+            <p>Telefone: {{ item.phoneNumber }}</p>
+            <p>Nome da Empresa: {{ item.fantasyName }}</p>
+            <p>UF: {{ item.uf }}</p>
+            <p>CNPJ da Empresa: {{ item.cnpjCompany }}</p>
+          </li>
+        </ul>
+      </section>
+    </a>
+    }
+  </section>
+
+  <div class="container">
+    <button
+      class="btn btn-primary"
+      title="Inserir novo fornecedor"
+      [routerLink]="['insertSupplier']"
+    >
+      + Novo
+    </button>
+  </div>
+</div>

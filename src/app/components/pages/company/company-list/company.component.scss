@@ -1,0 +1,79 @@
+@import "../../../../../config-scss/rem-calc.scss";
+
+:host {
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: rem-calc(10);
+
+    font-size: rem-calc(17);
+    font-style: arial;
+    font-weight: 400;
+  }
+
+  .listagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: rem-calc(100) 0;
+
+    .companies {
+      display: flex;
+      flex-direction: column;
+
+      width: calc(100%);
+      height: rem-calc(157 - 40);
+      padding: rem-calc(20);
+
+      margin-bottom: rem-calc(10);
+      border-radius: rem-calc(10);
+
+      text-decoration: none;
+      background: var(--primary);
+
+      cursor: pointer;
+      transition: 500ms;
+      &:hover {
+        background: var(--text-menu);
+      }
+
+      &__status {
+        p {
+          font-size: rem-calc(22);
+          font-style: italic;
+          font-weight: 700;
+          text-transform: capitalize;
+
+          margin-bottom: rem-calc(10);
+          color: var(--black);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding: 0;
+
+          li {
+            font-size: rem-calc(10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--primary-010);
+
+            border-radius: rem-calc(10);
+
+            width: 80%;
+            margin-bottom: rem-calc(5);
+          }
+        }
+      }
+    }
+  }
+}

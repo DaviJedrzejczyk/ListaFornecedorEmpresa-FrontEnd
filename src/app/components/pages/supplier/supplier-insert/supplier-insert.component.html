@@ -1,0 +1,53 @@
+<div class="container">
+  <form [formGroup]="formInsertSupplier" (ngSubmit)="submitForm()">
+    <label for="name">
+      Nome:
+      <input type="text" formControlName="name" required />
+    </label>
+
+    <label for="tipoPessoa">Tipo de Pessoa:</label>
+    <select formControlName="tipoPessoa">
+      <option value="juridica">Pessoa Jurídica</option>
+      <option value="fisica">Pessoa Física</option>
+    </select>
+
+    @if(isPessoaJuridica()){
+    <label for="cnpj">
+      CNPJ:
+      <input type="text" formControlName="cnpj" [mask]="'00.000.000/0000-00'" />
+    </label>
+    } @if(isPessoaFisica()){
+    <label for="cpf">
+      CPF:
+      <input type="text" formControlName="cpf" [mask]="'000.000.000-00'" />
+    </label>
+    <label for="rg">
+      RG:
+      <input type="text" formControlName="rg" />
+    </label>
+
+    <label for="birthDate">
+      Data de nascimento:
+      <input type="date" formControlName="birthDate" />
+    </label>
+    }
+    <label for="phoneNumber">
+      Número de Telefone:
+      <input type="text" formControlName="phoneNumber" required />
+    </label>
+
+    <label for="companyId">Empresa:</label>
+    <select formControlName="companyId">
+      @for(item of getAllCompanies; track item; ){
+      <option [value]="item.id">{{ item.fantasyName }}</option>
+      }
+    </select>
+
+    <button class="btn btn-primary" title="Cadastrar empresa">Cadastrar</button>
+  </form>
+
+  @if(msgError){
+  <span class="msg-error">{{ msgError }}</span> } @else if(msgSuccess) {
+  <span class="msg-success">{{ msgSuccess }}</span
+  >}
+</div>

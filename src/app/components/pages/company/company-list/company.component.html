@@ -1,0 +1,35 @@
+<div class="title">
+  <h1>Empresas Cadastradas</h1>
+  <button
+    class="btn btn-primary"
+    title="Inserir nova empresa"
+    [routerLink]="['insertCompany']"
+  >
+    + Novo
+  </button>
+  <section class="listagem">
+    @for (item of getAllCompanies; track item) {
+    <a [routerLink]="['UpdateCompany', item.id]" class="companies">
+      <section class="companies__status">
+        <p>Nome: {{ item.fantasyName }}</p>
+        <ul>
+          <li>
+            <p>UF: {{ item.uf }}</p>
+            <p>CNPJ: {{ item.cnpj }}</p>
+          </li>
+        </ul>
+      </section>
+    </a>
+    }
+  </section>
+
+  <div class="container">
+    <button
+      class="btn btn-primary"
+      title="Inserir nova empresa"
+      [routerLink]="['insertCompany']"
+    >
+      + Novo
+    </button>
+  </div>
+</div>

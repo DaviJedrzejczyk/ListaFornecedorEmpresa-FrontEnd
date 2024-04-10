@@ -1,0 +1,33 @@
+:host {
+  header {
+    background-color: var(--primary);
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+
+    &,
+    ul {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    ul {
+      li {
+        padding: 0 20px 0 25px;
+        font-size: 20px;
+        font-weight: 700;
+        &,
+        a {
+          background-color: var(--text-menu);
+          border-radius: 10px;
+          color: var(--text-menu-button);
+          text-decoration: none;
+          margin-right: 10px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

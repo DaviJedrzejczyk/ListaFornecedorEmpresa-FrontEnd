@@ -1,0 +1,72 @@
+<div class="container">
+  <form [formGroup]="formEditSupplier" (ngSubmit)="submitForm()">
+    <label for="id">
+      <input type="text" formControlName="id" required hidden />
+    </label>
+    <label for="name">
+      Nome:
+      <input type="text" formControlName="name" required />
+    </label>
+
+    @if (isPessoaFisica()) {
+    <label for="cpf">
+      CPF:
+      <input
+        type="text"
+        formControlName="cpf"
+        required
+        [mask]="'000.000.000-00'"
+      />
+    </label>
+    <label for="rg">
+      Rg:
+      <input type="text" formControlName="rg" required />
+    </label>
+    <label for="birthDate">
+      Data de nascimento:
+      <input type="text" formControlName="birthDate" required />
+    </label>
+    } @if (isPessoaJuridica()) {
+    <label for="cnpj">
+      CNPJ:
+      <input
+        type="text"
+        formControlName="cnpj"
+        required
+        [mask]="'00.000.000/0000-00'"
+      />
+    </label>
+    }
+    <label for="companyId">
+      Empresa:
+      <select formControlName="companyId">
+        @for(item of getAllCompanies; track item;){
+        <option
+          [value]="item.id"
+          [selected]="item.id === formEditSupplier.value.companyId"
+        >
+          {{ item.fantasyName }}
+        </option>
+        }
+      </select>
+    </label>
+
+    <label for="tipoPessoa" class="tipoPessoa"
+      >Tipo de Pessoa:
+      <select formControlName="tipoPessoa">
+        <option [value]="juridicaValue" class="options">Pessoa Jurídica</option>
+        <option [value]="fisicaValue" class="options">Pessoa Física</option>
+      </select>
+    </label>
+    <div class="buttons">
+      <button class="btn btn-primary" title="Salvar edição">Salvar</button>
+      <button class="btn btn-danger" (click)="delete()">Deletar</button>
+      <a class="btn btn__secondary" (click)="navigateToSuppliers()">Voltar</a>
+    </div>
+  </form>
+
+  @if(msgError){
+  <span class="msg-error">{{ msgError }}</span> } @else if(msgSuccess) {
+  <span class="msg-success">{{ msgSuccess }}</span
+  >}
+</div>

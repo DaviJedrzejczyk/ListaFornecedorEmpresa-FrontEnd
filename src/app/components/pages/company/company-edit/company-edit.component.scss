@@ -1,0 +1,36 @@
+:host {
+  form {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &,
+    label,
+    input,
+    select {
+      width: 100%;
+    }
+
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--primary);
+
+      input,
+      select {
+        height: 50px;
+        border: none;
+        font-size: 18px;
+        flex: 1;
+        padding-left: 5px;
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
