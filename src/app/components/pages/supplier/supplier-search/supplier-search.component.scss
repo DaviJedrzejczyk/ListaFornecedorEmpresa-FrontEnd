@@ -1,0 +1,33 @@
+@import "../../../../../config-scss/rem-calc.scss";
+
+:host {
+  display: block;
+
+  form {
+    display: flex;
+    align-items: center;
+
+    width: 400px;
+
+    input[type="text"],
+    input[type="date"] {
+      padding: 8px;
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+      outline: none;
+      font-size: 16px;
+      color: var(--text-menu);
+      background-color: rgba(240, 240, 240, 0.9);
+      transition: border-color 0.3s ease;
+
+      width: 100%;
+
+      &:focus {
+        border-color: var(--primary-010);
+      }
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+}

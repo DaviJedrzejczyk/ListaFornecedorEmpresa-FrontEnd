@@ -1,0 +1,35 @@
+@import "../../../../config-scss/rem-calc.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: rem-calc(400px);
+  }
+
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--white);
+
+    background-color: var(--button-insert);
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    margin: 0 5px;
+
+    &:hover {
+      background-color: var(--button-insert-010);
+    }
+  }
+}

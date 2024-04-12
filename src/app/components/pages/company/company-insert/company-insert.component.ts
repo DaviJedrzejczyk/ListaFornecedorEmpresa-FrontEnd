@@ -23,7 +23,6 @@ export class CompanyInsertComponent {
   public brasilian = Object.values(EBrasilianStates).filter((key) =>
     isNaN(Number(key))
   );
-
   public formInsertCompany: FormGroup = this.#formBuilder.group({
     nomeFantasia: ['', [Validators.required]],
     cnpj: ['', [Validators.required]],

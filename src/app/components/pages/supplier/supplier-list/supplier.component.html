@@ -1,5 +1,10 @@
 <div class="title">
   <h1>Fornecedores Cadastrados</h1>
+  <div>
+    <app-supplier-search
+      (emmitSearch)="getSearch($event)"
+    ></app-supplier-search>
+  </div>
   <button
     class="btn btn-primary"
     title="Inserir novo fornecedor"
@@ -19,6 +24,7 @@
             } @else {
             <p>CPF: {{ item.cpf }}</p>
             <p>RG: {{ item.rg }}</p>
+            <p>Data de Nascimento: {{ item.birthDate }}</p>
             }
             <p>Telefone: {{ item.phoneNumber }}</p>
             <p>Nome da Empresa: {{ item.fantasyName }}</p>

@@ -1,0 +1,14 @@
+<form>
+  <input
+    type="text"
+    (keyup)="search(inputSearch.value)"
+    #inputSearch
+    placeholder="Buscar Fornecedor..."
+  />
+  <input
+    type="date"
+    (change)="filterByDate(inputDate.value)"
+    #inputDate
+    placeholder="Buscar Fornecedor por data de nascimento..."
+  />
+</form>

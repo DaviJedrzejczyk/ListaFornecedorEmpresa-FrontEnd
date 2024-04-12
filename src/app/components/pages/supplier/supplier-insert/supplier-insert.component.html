@@ -5,12 +5,6 @@
       <input type="text" formControlName="name" required />
     </label>
 
-    <label for="tipoPessoa">Tipo de Pessoa:</label>
-    <select formControlName="tipoPessoa">
-      <option value="juridica">Pessoa Jurídica</option>
-      <option value="fisica">Pessoa Física</option>
-    </select>
-
     @if(isPessoaJuridica()){
     <label for="cnpj">
       CNPJ:
@@ -36,12 +30,22 @@
       <input type="text" formControlName="phoneNumber" required />
     </label>
 
-    <label for="companyId">Empresa:</label>
-    <select formControlName="companyId">
-      @for(item of getAllCompanies; track item; ){
-      <option [value]="item.id">{{ item.fantasyName }}</option>
-      }
-    </select>
+    <label for="companyId"
+      >Empresa:
+      <select formControlName="companyId">
+        @for(item of getAllCompanies; track item; ){
+        <option [value]="item.id">{{ item.fantasyName }}</option>
+        }
+      </select>
+    </label>
+
+    <label for="tipoPessoa" class="tipoPessoa"
+      >Tipo de Pessoa:
+      <select formControlName="tipoPessoa">
+        <option value="juridica">Pessoa Jurídica</option>
+        <option value="fisica">Pessoa Física</option>
+      </select>
+    </label>
 
     <button class="btn btn-primary" title="Cadastrar empresa">Cadastrar</button>
   </form>

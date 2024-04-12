@@ -7,7 +7,7 @@ import { HeaderComponent } from '../../header/header.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CompanyComponent, SupplierComponent, HeaderComponent],
+  imports: [CompanyComponent, SupplierComponent, HeaderComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

@@ -126,7 +126,7 @@ export class SupplierEditComponent implements OnInit {
           res;
           this.msgSuccess = res.message;
         },
-        error: (e) => this.showErrorAlert(e),
+        error: (e) => this.showErrorAlert(e.message),
       });
   }
 
